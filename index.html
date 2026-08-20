@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biccas | Productivity and Team Collaboration</title>
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Biccas is a productivity and team collaboration platform designed to help teams organize work, manage projects, share files, and improve productivity.">
+    <meta name="keywords" content="Biccas, productivity, team collaboration, project management, task management, cloud storage, business tools, SaaS">
+    <meta name="author" content="Nour Al-Din Al-Assar">
+    <!-- search and browser settings -->
+    <meta name="robots" content="index, follow">
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#54BD95">
+    <link rel="canonical" href="https://DebugNourExe.github.io/">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Biccas | Productivity and Team Collaboration">
+    <meta property="og:description" content="Organize work, manage projects, share files, and improve your team's productivity with Biccas.">
+
+
+
+    <meta property="og:image" content="https://DebugNourExe.github.io/">
+
+
+
+
+    <meta property="og:image:alt" content="Biccas productivity platform preview">
+    <meta property="og:image:width" content="702">
+    <meta property="og:image:height" content="599">
+    <meta property="og:image:type" content="image/png">
+
+
+
+
+    <meta property="og:url" content="https://DebugNourExe.github.io/">
+
+
+
+
+    <meta property="og:site_name" content="Biccas">
+    <meta property="og:locale" content="en_US">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Biccas | Productivity and Team Collaboration">
+    <meta name="twitter:description" content="Organize work, manage projects, share files, and improve your team's productivity with Biccas.">
+
+
+
+
+    <meta name="twitter:image" content="https://DebugNourExe.github.io/">
+
+
+
+
+    <meta name="twitter:image:alt" content="Biccas productivity platform preview">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/Group 138.png" type="image/png">
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+            extend: {
+                "colors": { 
+                    "bcg": "#f4f2ef",
+                    "co-50": "#eefbf6",
+                    "co-100": "#d6f5e9",
+                    "co-200": "#afead2",
+                    "co-300": "#86ddba",
+                    "co-400": "#67cfaa",
+                    "co-500": "#54bd95",
+                    "co-600": "#439b79",
+                    "co-700": "#357b60",
+                    "co-800": "#295f4b",
+                    "co-900": "#204b3c",
+                    "co-950": "#112b22",
+                    "Alink": "#A6A6A6",
+                    "footer": "#161C28"
+                },
+                "fontFamily":{
+                    "font-inter": ["Inter", "sans-serif"]
+                },
+                "keyframes": {
+                    "marquee": {
+                        "0%": { transform: "translateX(0)" },
+                        "100%": { transform: "translateX(-50%)" }
+                    }
+                },
+                "animation": {
+                    "marquee": "marquee 16s linear infinite"
+                }
+            },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-font-inter">
+    <!-- Header -->
+    <header class="fixed z-[2] w-[100%] bg-white/10 backdrop-blur">
+        <div class="container relative w-[85%] m-auto flex justify-between items-center py-3 max-lg:w-[90%] max-md:w-[97%]">
+            <!-- header-logo -->
+            <div class="z-[4]">
+                <a href="#" class="text-co-500 text-4xl font-semibold capitalize">biccas</a>
+            </div>
+            <!-- nav header -->
+            <div id="mobile-menu" class="mobile-nav flex items-center gap-[80px] max-md:absolute max-md:bg-co-500/60 max-md:w-[100%] max-md:h-screen max-md:top-[0] max-md:flex-col max-md:justify-center max-md:gap-9">
+                <!-- nav-bar -->
+                <nav class="max-md:w-[90%]">
+                    <ul class="flex gap-7 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-5">
+                        <li class="max-md:w-[100%] max-md:text-center max-md:rounded-[2rem]"><a href="#home" class="capitalize text-Alink hover:text-co-950 inline-block hover:-translate-y-[3px] transition-all duration-500 ease-in-out max-md:bg-co-50 max-md:text-co-950 max-md:py-[0.9rem] max-md:w-[100%] max-md:rounded-[2rem] max-md:hover:bg-co-500">home</a></li>
+                        <li class="max-md:w-[100%] max-md:text-center max-md:rounded-[2rem]"><a href="#about" class="capitalize text-Alink hover:text-co-950 inline-block hover:-translate-y-[3px] transition-all duration-500 ease-in-out  max-md:bg-co-50 max-md:text-co-950 max-md:py-[0.9rem] max-md:w-[100%] max-md:rounded-[2rem] max-md:hover:bg-co-500">about us</a></li>
+                        <li class="max-md:w-[100%] max-md:text-center max-md:rounded-[2rem]"><a href="#product" class="capitalize text-Alink hover:text-co-950 inline-block hover:-translate-y-[3px] transition-all duration-500 ease-in-out  max-md:bg-co-50 max-md:text-co-950 max-md:py-[0.9rem] max-md:w-[100%] max-md:rounded-[2rem] max-md:hover:bg-co-500">product</a></li>
+                        <li class="max-md:w-[100%] max-md:text-center max-md:rounded-[2rem]"><a href="#benefits" class="capitalize text-Alink hover:text-co-950 inline-block hover:-translate-y-[3px] transition-all duration-500 ease-in-out  max-md:bg-co-50 max-md:text-co-950 max-md:py-[0.9rem] max-md:w-[100%] max-md:rounded-[2rem] max-md:hover:bg-co-500">benefits</a></li>
+                        <li class="max-md:w-[100%] max-md:text-center max-md:rounded-[2rem]"><a href="#plan" class="capitalize text-Alink hover:text-co-950 inline-block hover:-translate-y-[3px] transition-all duration-500 ease-in-out  max-md:bg-co-50 max-md:text-co-950 max-md:py-[0.9rem] max-md:w-[100%] max-md:rounded-[2rem] max-md:hover:bg-co-500">pricing </a></li>
+                    </ul>
+                </nav>
+                <div class="flex items-center gap-3 max-md:flex-col max-md:w-[90%]">
+                    <button id="open-login" type="button" class="capitalize text-Alink hover:bg-co-500 hover:text-co-50  w-[6rem] h-9 grid place-items-center rounded-lg hover:-translate-y-[3px] transition-all duration-500 ease-in-out max-md:bg-co-500 max-md:text-co-950 max-md:h-[3.5rem] max-md:w-[100%] max-md:rounded-[2rem]">Login</button>
+                    <button id="open-signup" type="button" class="capitalize bg-co-500 text-co-50 w-[6rem] h-9 grid place-items-center rounded-lg hover:-translate-y-[3px] transition-all duration-500 ease-in-out max-md:bg-co-500 max-md:text-co-950 max-md:h-[3.5rem] max-md:w-[100%] max-md:rounded-[2rem] max-md:hover:text-co-50">Sign Up</button>
+                </div>
+            </div>
+            <!-- icon menu mobile -->
+            <div class="hidden max-md:flex z-[4]">
+                <button id="menu-button" type="button"><i id="icon-menu" class="fa-solid fa-bars text-co-500 border border-solid border-co-500 w-[2.3rem] h-[2.3rem] grid place-items-center rounded-lg"></i></button>
+            </div> 
+        </div>
+    </header>
+    <!-- Main -->
+    <main>
+        <!-- The Hero Section -->
+        <section id="home" class="h-screen relative overflow-hidden max-md:h-[100%]">
+            <div class="w-[85%] m-auto flex justify-between items-center flex-wrap h-full max-lg:w-[90%] max-md:w-[97%] max-md:flex-col max-md:pt-[5rem] max-md:gap-[3rem]">
+                <div class="w-[50%] flex flex-col gap-6 max-lg:gap-5 max-md:w-[100%]">
+                    <h1 class="capitalize text-co-950 text-7xl font-bold leading-[5rem] tracking-[0.3rem] [word-spacing:0.1rem] max-lg:text-5xl max-lg:tracking-[0.1rem] max-md:text-center max-md:text-4xl">We’re here to Increase your Productivity</h1>
+                    <svg width="450" height="33" viewBox="0 0 487 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-lg:w-[100%]">
+                        <path d="M4.00104 30C73.6317 10.3798 266.915 -17.0885 483.001 30" stroke="#54BD95" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                    <p class="capitalize text-co-950 text-base font-medium w-[80%] leading-[1.5rem] max-lg:w-[100%]">Let's make your work more organize and easily using the Taskio Dashboard with many of the latest featuresin managing work every day.</p>
+                    <div class="flex items-center gap-5">
+                        <a href="#plan" class="capitalize bg-co-500 text-co-50 w-[11rem] h-12 grid place-items-center rounded-3xl inline-block hover:-translate-y-[3px] transition-all duration-500 ease-in-out">Try free trial</a>
+                        <button id="open-demo" type="button" class="capitalize text-co-950 flex items-center hover:border hover:border-co-500 w-[11rem] h-12 flex items-center justify-center rounded-3xl hover:text-co-500 group transition-all duration-500 ease-in-out"><i class="fa-solid fa-play w-9 h-9 flex justify-center items-center rounded-[50%] border border-co-950 mr-[5px] group-hover:border-co-500 transition-all duration-500 ease-in-out"></i>View Demo</button>
+                    </div>
+                </div>
+                <div class="w-[50%] max-md:w-[100%]">
+                    <img src="assets/images/Group 138.png" alt="" class="w-[100%] h-auto hover:scale-[1.03] transition-all duration-500 ease-in-out">
+                </div>
+                <div class="size-[600px] rounded-[50%] bg-co-500 absolute -top-[50%] -left-[25%] z-[-1] blur-[20rem]"></div>
+                <div class="size-[600px] rounded-[50%] bg-co-500 absolute -bottom-[50%] right-[0%] z-[-1] blur-[20rem] "></div>
+                <div class="size-[600px] rounded-[50%] bg-[#FFD6D6] absolute -top-[80%] right-[20%] z-[-1] blur-[20rem]"></div>
+            </div>
+        </section>
+        <!-- TeamsUse Section -->
+        <section class="relative overflow-hidden">
+            <div class="w-[85%] m-auto flex justify-between items-center flex-wrap h-full py-[3rem] max-lg:w-[90%] max-md:w-[97%]">
+                <div class="text-center w-full">
+                    <h2 class="capitalize text-co-950 text-4xl font-bold mb-[3rem] max-lg:text-3xl max-md:text-2xl">More than 25,000 teams use Collabs</h2>
+                </div>
+                <!-- div link marquee -->
+                <div class="w-full flex items-center overflow-hidden">
+                    <div class="flex min-w-max items-center gap-8 px-8 sm:gap-12 sm:px-12 md:gap-16 md:px-16 lg:gap-20 lg:px-20 animate-marquee">
+                        <a href="#" class="shrink-0"><img src="assets/images/Group 141.png" alt="" class="h-[38px] w-auto max-w-none"></a>
+                        <a href="#" class="shrink-0"><img src="assets/images/Group 142.png" alt="" class="h-[38px] w-auto max-w-none"></a>
+                        <a href="#" class="shrink-0"><img src="assets/images/Group 144.png" alt="" class="h-[38px] w-auto max-w-none"></a>
+                        <a href="#" class="shrink-0"><img src="assets/images/Group 145.png" alt="" class="h-[38px] w-auto max-w-none"></a>
+                        <a href="#" class="shrink-0"><img src="assets/images/Group 146.png" alt="" class="h-[38px] w-auto max-w-none"></a>
+                        <a href="#" class="shrink-0" aria-hidden="true"><img src="assets/images/Group 141.png" alt="" class="h-[38px] w-auto max-w-none"></a>
+                        <a href="#" class="shrink-0" aria-hidden="true"><img src="assets/images/Group 142.png" alt="" class="h-[38px] w-auto max-w-none"></a>
+                        <a href="#" class="shrink-0" aria-hidden="true"><img src="assets/images/Group 144.png" alt="" class="h-[38px] w-auto max-w-none"></a>
+                        <a href="#" class="shrink-0" aria-hidden="true"><img src="assets/images/Group 145.png" alt="" class="h-[38px] w-auto max-w-none"></a>
+                        <a href="#" class="shrink-0" aria-hidden="true"><img src="assets/images/Group 146.png" alt="" class="h-[38px] w-auto max-w-none"></a>
+                    </div>
+                </div>
+                <div class="size-[600px] rounded-[50%] bg-co-500 absolute -bottom-[0%] -right-[5%] z-[-1] blur-[20rem]"></div>
+            </div>
+        </section>
+        <!-- Support Section -->
+        <section id="about" class="bg-[#F4F2EF]">
+            <div class="w-[85%] m-auto flex justify-between items-center flex-wrap h-full max-lg:w-[90%] max-md:w-[97%] max-md:flex-col">
+                <div class="w-[48%] flex flex-col gap-[2.8rem] py-[3rem] max-md:w-[100%]">
+                    <h2 class="text-5xl font-semibold text-co-950 leading-[3.5rem] max-lg:text-4xl max-lg:leading-[2.5rem]">How we support our pratner all over the world</h2>
+                    <p class="text-sm font-medium text-gray-400 leading-[1.5rem]">SaaS become a common delivery model for many business application, including office software, messaging software, payroll processing software, DBMS software, management software</p>
+                    <div class="flex justify-start items-center flex-wrap gap-14">
+                        <div class="flex flex-col justify-center gap-2">
+                            <div>
+                                <i class="fa-solid fa-star text-yellow-400"></i>
+                                <i class="fa-solid fa-star text-yellow-400"></i>
+                                <i class="fa-solid fa-star text-yellow-400"></i>
+                                <i class="fa-solid fa-star text-yellow-400"></i>
+                                <i class="fa-solid fa-star text-yellow-400"></i>
+                            </div>
+                            <p> <span class="font-bold">4.9</span> / 5 rating</p>
+                            <span class="font-bold text-gray-400">databricks</span>
+
+                        </div>
+                        <div class="flex flex-col justify-center gap-2">
+                            <div>
+                                <i class="fa-solid fa-star text-yellow-400"></i>
+                                <i class="fa-solid fa-star text-yellow-400"></i>
+                                <i class="fa-solid fa-star text-yellow-400"></i>
+                                <i class="fa-solid fa-star text-yellow-400"></i>
+                                <i class="fa-solid fa-star text-gray-400"></i>
+                            </div>
+                            <p><span class="font-bold">4.8</span> / 5 rating</p>
+                            <span class="font-bold text-gray-400">Chainalysis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-[48%] flex flex-col gap-[2.3rem] py-[3rem] max-md:w-[100%]">
+                    <div class="flex gap-[1.5rem]">
+                        <div class="w-[55px] h-[55px] p-[11px] bg-white grid place-items-center">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M27.5 15H22.5L18.75 26.25L11.25 3.75L7.5 15H2.5" stroke="#54BD95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-co-950 mb-[1rem] max-lg:text-lg max-lg:mb-[0.5rem]">Publishing</h3>
+                            <p class="text-lg text-gray-400  max-lg:text-base">Plan, collaborate, and publishing your contetn that drivees meaningful engagement and growth for your barnd</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-[1.5rem]"> 
+                        <div class="w-[55px] h-[55px] p-[11px] bg-white grid place-items-center">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.512 19.8626C25.7168 21.7432 24.473 23.4004 22.8894 24.6892C21.3057 25.9781 19.4305 26.8594 17.4276 27.2561C15.4247 27.6528 13.3551 27.5528 11.3997 26.9648C9.44436 26.3769 7.66281 25.3189 6.2108 23.8834C4.75879 22.4479 3.68055 20.6785 3.07032 18.73C2.4601 16.7815 2.33648 14.7132 2.71027 12.7059C3.08407 10.6986 3.9439 8.81338 5.21458 7.21513C6.48527 5.61689 8.12813 4.35424 9.99953 3.5376" stroke="#54BD95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M27.5 15C27.5 13.3585 27.1767 11.733 26.5485 10.2165C25.9203 8.69989 24.9996 7.3219 23.8388 6.16117C22.6781 5.00043 21.3001 4.07969 19.7835 3.45151C18.267 2.82332 16.6415 2.5 15 2.5V15H27.5Z" stroke="#54BD95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-co-950 mb-[1rem] max-lg:text-lg max-lg:mb-[0.5rem]">Analytics</h3>
+                            <p class="text-lg text-gray-400 max-lg:text-base">Analyze your performance and create goegeous report</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-[1.5rem]"> 
+                        <div class="w-[55px] h-[55px] p-[11px] bg-white grid place-items-center">
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.75 1C18.7554 1 17.8016 1.39509 17.0983 2.09835C16.3951 2.80161 16 3.75544 16 4.75V19.75C16 20.7446 16.3951 21.6984 17.0983 22.4017C17.8016 23.1049 18.7554 23.5 19.75 23.5C20.7446 23.5 21.6984 23.1049 22.4017 22.4017C23.1049 21.6984 23.5 20.7446 23.5 19.75C23.5 18.7554 23.1049 17.8016 22.4017 17.0983C21.6984 16.3951 20.7446 16 19.75 16H4.75C3.75544 16 2.80161 16.3951 2.09835 17.0983C1.39509 17.8016 1 18.7554 1 19.75C1 20.7446 1.39509 21.6984 2.09835 22.4017C2.80161 23.1049 3.75544 23.5 4.75 23.5C5.74456 23.5 6.69839 23.1049 7.40165 22.4017C8.10491 21.6984 8.5 20.7446 8.5 19.75V4.75C8.5 3.75544 8.10491 2.80161 7.40165 2.09835C6.69839 1.39509 5.74456 1 4.75 1C3.75544 1 2.80161 1.39509 2.09835 2.09835C1.39509 2.80161 1 3.75544 1 4.75C1 5.74456 1.39509 6.69839 2.09835 7.40165C2.80161 8.10491 3.75544 8.5 4.75 8.5H19.75C20.7446 8.5 21.6984 8.10491 22.4017 7.40165C23.1049 6.69839 23.5 5.74456 23.5 4.75C23.5 3.75544 23.1049 2.80161 22.4017 2.09835C21.6984 1.39509 20.7446 1 19.75 1Z" stroke="#54BD95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-co-950 mb-[1rem] max-lg:text-lg max-lg:mb-[0.5rem]">Engagement</h3>
+                            <p class="text-lg text-gray-400 max-lg:text-base">Quiuckly navigate you anda engage with your adience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Features Section -->
+        <section id="product" class="relative overflow-hidden">
+            <div class="w-[85%] m-auto flex justify-between items-center flex-wrap h-full py-[3rem] max-lg:w-[90%] max-md:w-[97%]">   
+                <div class="flex justify-between items-center mb-[3rem] flex-wrap max-md:gap-[2rem] max-sm:flex-col">
+                    <div class="w-[30%] max-lg:w-[35%] max-md:w-[45%] max-sm:w-[100%]">
+                        <h2 class="font-semibold text-5xl text-co-950 max-lg:text-4xl max-md:text-3xl">Our Features you cab get</h2>
+                    </div>
+                    <div class="w-[38%] max-lg:w-[32%] max-md:w-[45%] max-sm:w-[100%]">
+                        <p class="font-medium text-base text-Alink max-lg:text-sm">We offer a variety of interesting features that you can help increase yor productivity at work and manage your projrct esaly</p>
+                    </div>
+                    <div>
+                        <button type="button" id="get-started" class="bg-co-500 text-co-50 px-[40px] py-[15px] rounded-[2rem] grid hover:-translate-y-[3px] transition-all duration-500 ease-in-out">Get Started</button>
+                    </div>
+                </div>
+                <div class="w-[100%] flex justify-between items-center flex-wrap gap-[2rem] max-md:flex-col">
+                    <div class="w-[30%] flex flex-col gap-3 bg-co-50 p-[1.5rem] rounded-[2rem] hover:scale-[1.03] transition-all duration-500 ease-in-out max-lg:w-[46%] max-md:w-[50%] max-sm:w-[70%]">
+                        <img src="assets/images/Frame 247.png" alt="" class="w-[100%] h-auto">
+                        <h3 class="font-semibold text-2xl text-co-950">Collboration Teams </h3>
+                        <p class="font-normal text-base text-gray-400">Here you can handle projects together with team virtually</p>
+                    </div>
+                    <div class="w-[30%] flex flex-col gap-3 bg-co-50 p-[1.5rem] rounded-[2rem] hover:scale-[1.03] transition-all duration-500 ease-in-out max-lg:w-[46%] max-md:w-[50%] max-sm:w-[70%]">
+                        <img src="assets/images/Frame 53.png" alt="" class="w-[100%] h-auto">
+                        <h3 class="font-semibold text-2xl text-co-950">Cloud Storage</h3>
+                        <p class="font-normal text-base text-gray-400">No nedd to worry about storage because we provide storage up to 2 TB</p>
+                    </div>
+                    <div class="w-[30%] flex flex-col gap-3 bg-co-50 p-[1.5rem] rounded-[2rem] hover:scale-[1.03] transition-all duration-500 ease-in-out max-lg:w-[46%] max-lg:m-auto max-md:w-[50%] max-sm:w-[70%]">
+                        <img src="assets/images/Frame 54.png" alt="" class="w-[100%] h-auto">
+                        <h3 class="font-semibold text-2xl text-co-950">Daily Analytics</h3>
+                        <p class="font-normal text-base text-gray-400">We always provide useful informatin to make it easier for you every day</p>
+                    </div>
+                </div>
+                <div class="size-[550px] rounded-[50%] bg-[#FFD6D6] absolute top-[45%] -left-[5%] z-[-1] blur-[20rem]"></div>
+             </div>
+        </section>
+        <!-- What Benifit Will Section -->
+        <section id="benefits" class="relative overflow-hidden">
+            <div class="w-[85%] m-auto flex justify-between items-center flex-wrap h-full py-[3rem] max-lg:w-[90%] max-md:w-[97%] max-md:flex-col max-md:gap-[3rem]">
+                <div class="w-[50%] max-md:w-[100%]">
+                    <h2 class="text-co-950 text-5xl font-bold w-[70%] leading-[4rem] mb-[2rem] max-lg:w-[100%] max-lg:text-4xl">What Benifit Will You Get</h2>
+                    <ul class="flex flex-col gap-[1rem]">
+                        <li class="text-co-950 font-medium text-lg flex gap-[1rem] items-center before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-base before:text-co-50 before:flex before:justify-center before:items-center before:w-7 before:h-7 before:bg-co-500 before:rounded-full max-lg:text-base max-lg:before:w-6 max-lg:before:h-6 max-lg:text-sm">Free Consulting With Experet Saving Money</li>
+                        <li class="text-co-950 font-medium text-lg flex gap-[1rem] items-center before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-base before:text-co-50 before:flex before:justify-center  before:items-center before:w-7 before:h-7 before:bg-co-500 before:rounded-full max-lg:text-base max-lg:before:w-6 max-lg:before:h-6 max-lg:text-sm">Online Banking</li>
+                        <li class="text-co-950 font-medium text-lg flex gap-[1rem] items-center before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-base before:text-co-50 before:flex before:justify-center  before:items-center before:w-7 before:h-7 before:bg-co-500 before:rounded-full max-lg:text-base max-lg:before:w-6 max-lg:before:h-6 max-lg:text-sm">Investment Report Every Month</li>
+                        <li class="text-co-950 font-medium text-lg flex gap-[1rem] items-center before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-base before:text-co-50 before:flex before:justify-center  before:items-center before:w-7 before:h-7 before:bg-co-500 before:rounded-full max-lg:text-base max-lg:before:w-6 max-lg:before:h-6 max-lg:text-sm">Saving Money For The Future</li>
+                        <li class="text-co-950 font-medium text-lg flex gap-[1rem] items-center before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-base before:text-co-50 before:flex before:justify-center before:items-center before:w-7 before:h-7 before:bg-co-500 before:rounded-full max-lg:text-base max-lg:before:w-6 max-lg:before:h-6 max-lg:text-sm">Online Transection</li>
+                    </ul>
+                </div>
+                <div class="w-[50%] max-md:w-[100%] grid place-items-center">
+                    <img src="assets/images/Group 1940.png" alt="" class="w-[100%] h-auto hover:scale-[1.03] transition-all duration-500 ease-in-out max-md:w-[80%]">
+                </div>
+                <div class="size-[550px] rounded-[50%] bg-[#FFD6D6] absolute -top-[0%] -left-[5%] z-[-1] blur-[20rem]"></div>
+                <div class="size-[600px] rounded-[50%] bg-co-500 absolute -bottom-[70%] -right-[0%] z-[-1] blur-[20rem]"></div>
+            </div>
+        </section>
+        <!-- Choose Plan Cards Section -->
+        <section id="plan" class="relative overflow-hidden py-[3rem]">
+            <div class="w-[85%] m-auto flex justify-between items-center flex-wrap h-full py-[3rem] max-lg:w-[90%] max-md:w-[97%]">
+                <div class="text-center w-full mb-[3rem]">
+                    <h2 class="text-co-950 font-bold text-5xl leading-[4rem] mb-[2.5rem] max-lg:text-4xl max-lg:leading-[3rem] max-sm:text-3xl">Choose Plan <span class="block">That’s Right For You</span></h2>
+                    <p class="text-base font-blod text-gray-400 mb-[2.5rem]">Choose plan that works best for you, feel free to contact us</p>
+                    <div class="flex bg-white justify-center items-center gap-[1rem]  w-fit m-auto p-[0.3rem] rounded-[0.6rem] shadow-lg shadow-gray-300/50">
+                        <div class="billing-container relative flex justify-center items-center gap-[1rem] w-fit m-auto p-[0.4rem] rounded-[0.8rem]">
+                            <!-- Slider -->
+                            <div id="slider" class="absolute left-[0.4rem] top-[0.4rem] w-[8rem] h-[calc(100%-0.8rem)] bg-co-500 rounded-[0.6rem] transition-all duration-300 z-0">
+                            </div>
+                            <button type="button" id="monthly" class="relative z-10 w-[8rem] py-[12px] text-center rounded-[0.6rem] cursor-pointer text-co-50"> Bill Monthly</button>
+                            <button type="button" id="yearly" class="relative z-10 w-[8rem] py-[12px] text-center rounded-[0.6rem] cursor-pointer text-co-950"> Bill Yearly</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-[100%] flex justify-between items-center flex-wrap gap-[1rem] max-md:flex-col">
+                    <div class="group w-[31%] relative overflow-hidden flex flex-col justify-between items-center gap-[2rem] bg-white shadow-lg shadow-gray-300/50 px-[1rem] py-[1.5rem] rounded-[1.2rem] hover:bg-co-500 transition-all duration-300 ease-in-out max-lg:w-[48%] max-lg:px-[0.8rem] max-md:w-[60%] max-sm:w-[90%]">
+                        <div class="absolute right-1/2 top-1/2 -translate-y-1/2 translate-x-1/2 w-[120%] aspect-square rounded-full bg-co-200/50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"></div>
+                        <div class="relative flex flex-col justify-between items-center gap-[1.2rem] z-[1] group-hover:pb-[4rem] transition-all duration-300 ease-in-out">
+                            <h3 class="text-xl font-bold group-hover:text-co-50 transition-all duration-300 ease-in-out">Free</h3>
+                            <p class="w-[80%] text-center text-gray-500 group-hover:text-co-50 transition-all duration-300 ease-in-out">Have a go  and test your superpowers</p>
+                            <span class="font-bold text-3xl group-hover:text-co-50 transition-all duration-300 ease-in-out">
+                                <sup class="text-xl font-normal text-gray-500 group-hover:text-co-50 transition-all duration-300 ease-in-out">$</sup>
+                                <span id="free-price">0</span>
+                                <span id="free-period" class="text-sm font-normal text-gray-500 group-hover:text-co-50 transition-all duration-300 ease-in-out">/month</span>
+                            </span>
+
+                            <p id="free-saving" class="bg-co-200/50 py-[0.8rem] px-[1.5rem] rounded-[0.6rem] text-white absolute bottom-[0] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"> Free forever</p>
+                        </div>
+                        <div class="bg-[#F9FAFB] w-[100%] px-[1.5rem] py-[2rem] rounded-[0.6rem] z-[1] group-hover:bg-white transition-all duration-300 ease-in-out">
+                            <ul class="flex flex-col gap-[1.5rem] mb-[2.5rem]">
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">2 Users</li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">2 Files</li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">Public Share & Comments</li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">Chat Support </li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">New income apps</li>
+                            </ul>
+
+                            <button type="button" id="select-free-plan" class="bg-white text-co-500 shadow-lg shadow-gray-300/50 py-[1rem] grid w-[90%] m-auto rounded-[1.2rem] group-hover:bg-co-500 group-hover:text-co-50 hover:scale-[1.03] transition-all duration-300 ease-in-out">Sign Up for free</button>
+
+                        </div>
+                    </div>
+                    <div class="group w-[31%] relative overflow-hidden flex flex-col justify-between items-center gap-[2rem] bg-white shadow-lg shadow-gray-300/50 px-[1rem] py-[1.5rem] rounded-[1.2rem] hover:bg-co-500 transition-all duration-300 ease-in-out max-lg:w-[48%] max-lg:px-[0.8rem] max-md:w-[60%] max-sm:w-[90%]">
+                        <div class="absolute right-1/2 top-1/2 -translate-y-1/2 translate-x-1/2 w-[120%] aspect-square rounded-full bg-co-200/50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"></div>
+                        <div class="relative flex flex-col justify-between items-center gap-[1.2rem] z-[1] group-hover:pb-[4rem] transition-all duration-300 ease-in-out">
+                            <h3 class="text-xl font-bold group-hover:text-co-50 transition-all duration-300 ease-in-out">Pro</h3>
+                            <p class="w-[80%] text-center text-gray-500 group-hover:text-co-50 transition-all duration-300 ease-in-out">Experiment the power of infinite possibilities</p>
+                            <span class="font-bold text-3xl group-hover:text-co-50 transition-all duration-300 ease-in-out">
+                                <sup class="text-xl font-normal text-gray-500 group-hover:text-co-50 transition-all duration-300 ease-in-out">$</sup>
+                                <span id="pro-price">8</span>
+                                <span id="pro-period" class="text-sm font-normal text-gray-500 group-hover:text-co-50 transition-all duration-300 ease-in-out">/month</span>
+                            </span>
+
+                            <p id="pro-saving" class=" bg-co-200/50 py-[0.8rem] px-[1.5rem] rounded-[0.6rem] text-white absolute bottom-[0] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">Billed monthly</p>
+                        </div>
+                        <div class="bg-[#F9FAFB] w-[100%] px-[1.5rem] py-[2rem] rounded-[0.6rem] z-[1] group-hover:bg-white transition-all duration-300 ease-in-out">
+                            <ul class="flex flex-col gap-[1.5rem] mb-[2.5rem]">
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">4 Users</li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">All apps</li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">Unlimited editable exports</li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">Folders and collaboration </li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">All incoming apps</li>
+                            </ul>
+
+                            <button type="button" id="select-pro-plan" class="bg-white text-co-500 shadow-lg shadow-gray-300/50 py-[1rem] grid w-[90%] m-auto rounded-[1.2rem] group-hover:bg-co-500 group-hover:text-co-50 hover:scale-[1.03] transition-all duration-300 ease-in-out">Go to Pro</button>
+
+                        </div>
+                    </div>
+                    <div class="group w-[31%] relative overflow-hidden flex flex-col justify-between items-center gap-[2rem] bg-white shadow-lg shadow-gray-300/50 px-[1rem] py-[1.5rem] rounded-[1.2rem] hover:bg-co-500 transition-all duration-300 ease-in-out max-lg:w-[48%] max-lg:m-auto max-lg:px-[0.8rem] max-md:w-[60%] max-sm:w-[90%]">
+                        <div class="absolute right-1/2 top-1/2 -translate-y-1/2 translate-x-1/2 w-[120%] aspect-square rounded-full bg-co-200/50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"></div>
+                        <div class="relative flex flex-col justify-between items-center gap-[1.2rem] z-[1] group-hover:pb-[4rem] transition-all duration-300 ease-in-out">
+                            <h3 class="text-xl font-bold group-hover:text-co-50 transition-all duration-300 ease-in-out">Business</h3>
+                            <p class="w-[80%] text-center text-gray-500 group-hover:text-co-50 transition-all duration-300 ease-in-out">Unveil new superpowers and join the Design Leaque</p>
+                            <span class="font-bold text-3xl group-hover:text-co-50 transition-all duration-300 ease-in-out">
+                                <sup class="text-xl font-normal text-gray-500 group-hover:text-co-50 transition-all duration-300 ease-in-out">$</sup>
+                                <span id="business-price">16</span>
+                                <span id="business-period" class="text-sm font-normal text-gray-500 group-hover:text-co-50 transition-all duration-300 ease-in-out">/month</span>
+                            </span>
+
+                            <p id="business-saving" class="bg-co-200/50 py-[0.8rem] px-[1.5rem] rounded-[0.6rem] text-white absolute bottom-[0] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">Billed monthly</p>
+                        </div>
+                        <div class="bg-[#F9FAFB] w-[100%] px-[1.5rem] py-[2rem] rounded-[0.6rem] z-[1] group-hover:bg-white transition-all duration-300 ease-in-out">
+                            <ul class="flex flex-col gap-[1.5rem] mb-[2.5rem]">
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">All the features of pro plan</li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">Account success Manager</li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">Single Sign-On (SSO)</li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">Co-conception pogram</li>
+                                <li class="font-medium text-lg flex items-center gap-[1rem] before:content-['\f00c'] before:font-['Font_Awesome_6_Free'] before:font-semibold before:text-sm before:text-co-50 before:flex before:justify-center before:items-center before:w-6 before:h-6 before:bg-co-500 before:rounded-full max-lg:before:w-5 max-lg:before:h-5 max-lg:before:text-xs max-sm:text-base">Collaboration-Soon</li>
+                            </ul>
+
+                            <button type="button" id="select-business-plan" class="bg-white text-co-500 shadow-lg shadow-gray-300/50 py-[1rem] grid w-[90%] m-auto rounded-[1.2rem] group-hover:bg-co-500 group-hover:text-co-50 hover:scale-[1.03] transition-all duration-300 ease-in-out">Go to Business</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="size-[600px] rounded-[50%] bg-co-500 absolute -top-[42%] right-[0%] z-[-1] blur-[20rem]"></div>
+                <div class="size-[600px] rounded-[50%] bg-co-500 absolute bottom-[0%] -right-[20%] z-[-1] blur-[20rem]"></div>
+
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-footer pt-[4rem]">
+        <div class="w-[85%] m-auto flex flex-col justify-between items-center gap-[7rem] h-full py-[2rem] max-lg:w-[90%] max-md:w-[97%]">
+            <div class="w-[100%] flex justify-between items-center py-[1rem] max-md:flex-col max-md:gap-[3rem]">
+                <div class="w-[50%] flex flex-col gap-[1.8rem] max-md:w-[100%]">
+                    <h2 class="text-white font-semibold text-5xl w-[80%] leading-[3.8rem] max-lg:text-4xl max-lg:w-[95%] max-lg:font-medium">People are Saying About DoWhith</h2>
+                    <p class="text-Alink font-medium w-[75%] max-lg:w-[95%]">Everything you need to accept to payment and grow your money of manage anywhere on planet</p>
+                    <div class="flex gap-[2px] mb-[0.6rem] mt-[0.6rem]">
+                        <svg width="22" height="38" viewBox="0 0 22 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.5 0H21.5L14.5 38H0L11.5 0Z" fill="#D9D9D9"/>
+                        </svg>
+                        <svg width="22" height="38" viewBox="0 0 22 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.5 0H21.5L14.5 38H0L11.5 0Z" fill="#D9D9D9"/>
+                        </svg>
+                    </div>
+                    <p class="text-Alink font-medium w-[75%] max-lg:w-[95%]">I am very helped by this E-wallet application , my days are very easy to use this application and its very helpful in my life , even I can pay a short time 😍</p>
+                    <p class="text-Alink font-medium">_ Aria Zinanrio</p>
+                    <div class="flex items-center gap-[0.5rem]">
+                        <div id="testimonial-avatars" class="flex items-center gap-[0.5rem]">
+                            <img src="assets/images/Ellipse 54.png" alt="" class="w-[50px] h-auto">
+                            <img src="assets/images/Ellipse 55.png" alt="" class="w-[50px] h-auto">
+                            <img src="assets/images/Ellipse 56.png" alt="" class="w-[50px] h-auto">
+                            <img src="assets/images/Ellipse 57.png" alt="" class="w-[50px] h-auto">
+                        </div>
+                        <button type="button" id="rotate-testimonial-avatars" aria-label="show next customer" class="w-[50px] h-[50px] rounded-full border border-solid border-white grid place-items-center cursor-pointer hover:scale-[1.1] transition-all duration-500 ease-in-out"><i class="fa-solid fa-arrow-right text-white"></i></button>
+                    </div>
+                </div>
+                <div class="w-[50%] max-md:w-[100%] grid place-items-center">
+                    <div class="w-[100%] bg-Alink/15 rounded-[0.7rem] py-[2rem] px-[1.2rem] grid place-items-center gap-[1.3rem] max-md:w-[80%] max-sm:w-[95%]">
+                        <img src="assets/images/Group.png" alt="" class="w-[65px] h-auto">
+                        <h3 class="text-3xl text-white font-medium">Get Started</h3>
+                        <form id="demo-form" class="flex flex-col gap-[0.8rem] w-[25rem] max-lg:w-[85%]" novalidate>
+                            <label for="demo-email" class="text-white">Email</label>
+                            <input type="email" id="demo-email" name="user_email" autocomplete="email"
+                            placeholder="Enter your email" class="w-[100%] rounded-[0.6rem]">
+                            <label for="demo-message" class="text-white">Message</label>
+                            <textarea id="demo-message" name="message" rows="4" placeholder="Tell us what you would like to see in the demo" class="rounded-[0.6rem] w-[100%]"></textarea>
+                            <p id="demo-status" class="hidden rounded-[0.6rem] p-3 text-sm" aria-live="polite"></p>
+                            <button type="submit" id="demo-submit" class="bg-white w-[100%] text-Alink shadow-lg shadow-gray-300/50 py-[1rem] px-[2rem] rounded-[0.6rem] hover:bg-co-500 hover:text-co-50 transition-all duration-300 ease-in-out">Request Demo</button>
+                        </form>
+                        <p class="w-[25rem] text-white text-sm font-medium text-right max-lg:w-[85%]"><span class="font-light text-Alink">or</span> <button type="button" id="footer-free-trial" class="font-medium hover:text-co-500 transition-all duration-300 ease-in-out"> Start Free Trial</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[100%] py-[1rem] flex flex-col justify-between items-center gap-[2.5rem]">
+                <div class="w-[100%] flex justify-between items-center max-md:flex-col max-md:gap-[3rem]">
+                    <div class="w-[50%] flex flex-col gap-[1rem] max-md:w-[100%]">
+                        <a href="#" class="text-co-500 text-4xl font-semibold capitalize">biccas</a>
+                        <p class="text-lg font-medium text-Alink">Get started now try our product</p>
+                        <form id="footer-trial-form" class="flex items-center relative">
+                            <input type="email" name="email" id="footer-trial-email" autocomplete="email" placeholder="Enter your email" class="w-[65%] bg-inherit rounded-[2.5rem] border-[2px] border-solid border-Alink py-[0.8rem] pl-[1rem] pr-[4rem] text-white max-lg:w-[85%]">
+                            <button type="submit" id="footer-trial-submit" aria-label="Start free trial" formnovalidate>
+                            <i class="fas fa-arrow-right text-white bg-co-500 
+                            w-[2.7rem] h-[2.7rem] grid place-items-center rounded-full -translate-x-[3.1rem] cursor-pointer hover:bg-inherit hover:border hover:border-solid hover:border-white transition-all duration-300 ease-in-out "></i></button>
+                        </form>
+                        <p id="footer-trial-status" class="hidden mt-2 text-sm text-red-400" aria-live="polite"></p>
+                    </div>
+                    <div class="w-[50%] flex justify-between items-center flex-wrap gap-[1rem] max-md:w-[100%]">
+                        <ul class="flex flex-col justify-center items-start gap-[1rem]">
+                            <li class="mb-[0.5rem]">
+                                <span class="text-white text-base font-medium cursor-context-menu hover:text-co-500 transition-all duration-300 ease-in-out">Support</span>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">Help centre</a>
+                            </li>
+                            <li>
+                                <button type="button" id="footer-login" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">Account information</button>
+                            </li>
+                            <li>
+                                <a href="#about" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">About</a>
+                            </li>
+                            <li>
+                                <a href="#demo-form" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">Contact us</a>
+                            </li>
+                        </ul>
+                        <ul class="flex flex-col justify-center items-start gap-[1rem]">
+                            <li class="mb-[0.5rem]">
+                                <span class="text-white text-base font-medium cursor-context-menu hover:text-co-500 transition-all duration-300 ease-in-out">Help and Solution</span>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">Talk to support</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">Support docs</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">System status</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">Covid responde</a>
+                            </li>
+                        </ul>
+                        <ul class="flex flex-col justify-center items-start gap-[1rem]">
+                            <li class="mb-[0.5rem]">
+                                <span class="text-white text-base font-medium cursor-context-menu hover:text-co-500 transition-all duration-300 ease-in-out">Product</span>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">Update</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">Security</a>
+                            </li>
+                            <li>
+                                <button type="button" id="footer-signup" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">Beta test</button>
+                            </li>
+                            <li>
+                                <a href="#plan" class="text-Alink text-base font-medium hover:text-co-500 transition-all duration-300 ease-in-out">Pricing product</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-[100%] flex justify-between items-center flex-wrap gap-[1.5rem]">
+                    <p class="text-white">&copy; <span id="current-year"></span> Biccas Inc. Copyright and rights reserved</p>
+                    <div class="flex justify-between items-center gap-[0.5rem]">
+                        <p class="text-white">Terms and Condtions</p>
+                        <p class="text-white">.</p>
+                        <p class="text-white">Privacy Policy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- the login modal -->
+     <div id="login-modal" class="hidden fixed inset-0 z-50 bg-black/70 items-center justify-center p-4">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-6"> 
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-co-950">Welcome Back</h2>
+                <button id="close-login" type="button" class="text-3xl text-gray-500 hover:text-co-500 transition-all duration-300 ease-in-out" aria-label="Close login form">&times;</button>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">Log in using your email and password.</p>  
+            <form id="login-form" class="mt-6 space-y-4" novalidate>
+                <div>
+                    <label for="login-email" class="block mb-2 text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" id="login-email" placeholder="Enter your email" autocomplete="email" class="w-full border border-gray-300 rounded-lg py-3 px-4 outline-none focus:border-co-500">
+                </div>
+                <div>
+                    <label for="login-password" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" id="login-password" placeholder="Enter your password" autocomplete="current-password" class="w-full border border-gray-300 rounded-lg py-3 px-4 outline-none focus:border-co-500">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="show-login-passwords" class="size-4 accent-co-500 cursor-pointer">
+                    <label for="show-login-passwords" class="text-sm text-gray-600 cursor-pointer">Show password</label>
+                </div>
+                <p id="login-message" class="hidden rounded-lg p-3 text-sm" aria-live="polite"></p>
+                <button type="submit" class="w-full rounded-lg bg-co-500 py-3 font-medium text-white hover:-translate-y-[3px] transition-all duration-500 ease-in-out">Log In</button>
+            </form>
+        </div>
+     </div>
+    <!-- the signup modal -->
+    <div id="signup-modal" class="hidden fixed inset-0 z-50 bg-black/70 items-center justify-center p-4">
+        <div class="w-full max-w-md max-h-[95vh] overflow-y-auto bg-white rounded-2xl shadow-xl p-6">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-co-950">Creat Account</h2>
+                <button id="close-signup" type="button" class="text-3xl text-gray-500 hover:text-co-500 transition-all duration-300 ease-in-out" aria-label="Close">&times;</button>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">Create your to get started</p>
+            <p id="selected-plan-summary" class="mt-3  rounded-lg bg-co-500/10 p-2 text-sm font-medium text-co-950">Selected plan: Free - $0/month</p>
+            <form action="#" id="signup-form" class="mt-4 space-y-3" novalidate>
+                <div>
+                    <label for="signup-name" class="block mb-2 text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" name="name" id="signup-name" placeholder="Enter your name" autocomplete="name" class="w-full border border-gray-300 rounded-lg py-2.5 px-4 outline-none focus:border-co-500">
+                </div>
+                <div>
+                    <label for="signup-email" class="block mb-2 text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" id="signup-email" placeholder="Enter your email" autocomplete="email" class="w-full border border-gray-300 rounded-lg py-2.5 px-4 outline-none focus:border-co-500">
+                </div>
+                <div>
+                    <label for="signup-password" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" id="signup-password" placeholder="Enter your password" autocomplete="new-password" class="w-full border border-gray-300 rounded-lg py-2.5 px-4 outline-none focus:border-co-500">
+                </div>
+                <div>
+                    <label for="signup-confirm-password" class="block mb-2 text-sm font-medium text-gray-700">confirm password</label>
+                    <input type="password" name="confirmPassword" id="signup-confirm-password" placeholder="Confirm your password" autocomplete="new-password" class="w-full border border-gray-300 rounded-lg py-2.5 px-4 outline-none focus:border-co-500">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="show-signup-passwords" class="size-4 accent-co-500 cursor-pointer">
+                    <label for="show-signup-passwords" class="text-sm text-gray-600 cursor-pointer">Show passwords</label>
+                </div>
+                <p id="signup-message" class="hidden rounded-lg p-2.5 text-sm" aria-live="polite"></p>
+                <button type="submit" class="w-full rounded-lg bg-co-500 py-2.5 font-medium text-white hover:-translate-y-[3px] transition-all duration-500 ease-in-out">Create Account</button>
+            </form>
+        </div>
+    </div>
+    <!-- the deom model -->
+    <div id="demo-modal" class="hidden fixed inset-0 z-50 bg-black/70 items-center justify-center p-5">
+        <div class="relative w-full max-w-3xl">
+            <button id="close-demo" type="button" class="absolute -top-10 right-0 text-white text-3xl" aria-label="Close video">&times;</button>
+            <iframe id="demo-video" class="w-full aspect-video rounded-xl" src="" title="Productivity demo video" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -91,13 +91,6 @@ loginForm.addEventListener("submit",(e)=>{
     loginMessage.classList.add("bg-green-100","text-green-700");
     loginForm.reset();
     loginPasswordInput.type = "password";
-
-
-
-
-
-
-
 });
 // the signup modal
 const openSignupButton = document.getElementById("open-signup");
@@ -170,7 +163,6 @@ signupForm.addEventListener("submit",(e)=>{
         signupMessage.classList.remove("hidden");
         signupMessage.classList.add("bg-red-100","text-red-700");
         return;
-        
     }};
     if (password.length < 8) {
         signupMessage.textContent = "Password must be at least 8 characters.";
@@ -253,7 +245,6 @@ monthly.addEventListener("click",()=>{
     businessPrice.textContent = "16";
     businessPeriod.textContent = "/month";
     businessSaving.textContent = "Billed monthly";
-    
 });
 // the plan yearly
 yearly.addEventListener("click",()=>{
@@ -272,7 +263,6 @@ yearly.addEventListener("click",()=>{
     businessPrice.textContent = "160";
     businessPeriod.textContent = "/year";
     businessSaving.textContent = "Save $32 a year";
-
 });
 // the plan selection
 const choosePlan = (planName) => {
@@ -410,5 +400,3 @@ footerTrialForm.addEventListener("submit",(e)=>{
 // the current year
 const currentYear = document.getElementById("current-year");
 currentYear.textContent = new Date().getFullYear();
-
-

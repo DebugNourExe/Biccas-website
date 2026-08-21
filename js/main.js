@@ -3,6 +3,217 @@ emailjs.init({
 });
 const emailServiceId = "default_service";
 const demoTemplateId = "template_7kc4qyo";
+// SplitText animation
+gsap.registerPlugin(SplitText);
+// Header intro animation
+const introHeader = document.getElementById("intro-header");
+const introLogo = document.getElementById("intro-logo");
+const introNavItems =introHeader.querySelectorAll("nav li");
+const introHeaderActions =introHeader.querySelectorAll(".intro-header-action");
+const introMenuButton =document.getElementById("menu-button");
+const headerMatchMedia = gsap.matchMedia();
+// Desktop animation
+headerMatchMedia.add("(min-width: 769px)", () => {
+    gsap.set(introHeaderActions, {
+        transition: "none",
+    });
+    const headerTimeline = gsap.timeline({
+        defaults: {
+            ease: "power3.out",
+        },
+    });
+    headerTimeline.fromTo(
+        introHeader,{
+            yPercent: -100,
+            opacity: 0,
+        },{yPercent: 0,
+            opacity: 1,
+            duration: 0.65,
+        }).fromTo(introLogo,{
+            x: -50,
+            opacity: 0,
+        },{x: 0,
+            opacity: 1,
+            duration: 0.45,
+        },"-=0.25").fromTo(introNavItems,{
+            y: -25,
+            opacity: 0,
+        },{
+            y: 0,
+            opacity: 1,
+            stagger: 0.1,
+            duration: 0.4,
+        },"-=0.15").fromTo(
+            introHeaderActions,
+        {x: 35,
+            opacity: 0,
+        },{
+            x: 0,
+            opacity: 1,
+            stagger: 0.12,
+            duration: 0.4,
+        },"-=0.15").set(introHeaderActions, {
+            clearProps: "transform,opacity,transition",});
+});
+// Mobile animation
+headerMatchMedia.add("(max-width: 768px)", () => {
+    const mobileHeaderTimeline = gsap.timeline({
+        defaults: {
+            ease: "power3.out",
+        },
+    });
+    mobileHeaderTimeline
+        .fromTo(
+            introHeader,
+            {
+                yPercent: -100,
+                opacity: 0,
+            },
+            {
+                yPercent: 0,
+                opacity: 1,
+                duration: 0.65,
+            }
+        )
+        .fromTo(
+            introLogo,
+            {
+                x: -40,
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 0.4,
+            },
+            "-=0.25"
+        )
+        .fromTo(
+            introMenuButton,
+            {
+                scale: 0,
+                opacity: 0,
+            },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 0.4,
+                ease: "back.out(1.7)",
+            },
+            "-=0.2"
+        );
+});
+// Hero intro animation
+const heroTitle = document.getElementById("intro-title");
+const heroTitleSvg = document.getElementById("intro-title-svg");
+const heroDescription =document.getElementById("intro-description");
+const heroButtons =document.getElementById("intro-buttons");
+const heroImage =document.getElementById("intro-hero-image");
+const splitHeroTitle = new SplitText(heroTitle, {
+    type: "words",
+});
+const letterDirections = [
+    { x: 0, y: 80 },
+    { x: 0, y: -80 },
+    { x: -80, y: 0 },
+    { x: 80, y: 0 },
+];
+gsap.set(heroButtons.children, {
+    transition: "none",
+});
+const heroTimeline = gsap.timeline({
+    delay: window.innerWidth <= 768 ? 0.8 : 1.5,
+});
+heroTimeline.fromTo(heroImage,{
+            scale: 0.2,
+            x: 160,
+            opacity: 0,
+            rotation: 7,
+        },
+        {
+            scale: 1,
+            x: 0,
+            opacity: 1,
+            rotation: 0,
+            duration: 0.85,
+            ease: "power4.out",
+        }
+    )
+    .fromTo(
+        splitHeroTitle.words,
+        {
+            x: (i) => letterDirections[i % 4].x,
+            y: (i) => letterDirections[i % 4].y,
+            opacity: 0,
+            rotation: (i) => (i % 2 === 0 ? -15 : 15),
+        },
+        {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            rotation: 0,
+            stagger: 0.018,
+            duration: 0.55,
+            ease: "back.out(1.5)",
+        },
+        "-=0.3"
+    )
+    .fromTo(
+        heroTitleSvg,
+        {
+            scaleX: 0,
+            opacity: 0,
+        },
+        {
+            scaleX: 1,
+            opacity: 1,
+            transformOrigin: "left center",
+            duration: 0.4,
+            ease: "power2.out",
+        }
+    )
+    .fromTo(
+        heroDescription,
+        {
+            y: 25,
+            opacity: 0,
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.4,
+            ease: "power2.out",
+        }
+    )
+    .fromTo(
+        heroButtons.children,
+        {
+            y: 25,
+            opacity: 0,
+        },
+        {
+            y: 0,
+            opacity: 1,
+            stagger: 0.12,
+            duration: 0.4,
+            ease: "back.out(1.5)",
+        }
+    )
+    .set(heroImage, {
+        clearProps: "transform,opacity",
+    })
+    .set(splitHeroTitle.words, {
+        clearProps: "transform,opacity",
+    })
+    .set(heroTitleSvg, {
+        clearProps: "transform,opacity",
+    })
+    .set(heroDescription, {
+        clearProps: "transform,opacity",
+    })
+    .set(heroButtons.children, {
+        clearProps: "transform,opacity,transition",
+    });
 // the menu button for mobile
 const menuButton = document.getElementById("menu-button");
 const mobileMenu = document.getElementById("mobile-menu");

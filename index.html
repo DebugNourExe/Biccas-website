@@ -37,6 +37,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- icon -->
     <link rel="icon" href="assets/images/Group 138.png" type="image/png">
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -78,7 +79,7 @@
     </script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-font-inter">
+<body class="font-font-inter overflow-x-hidden">
     <!-- Header -->
     <header id="intro-header" class="fixed z-[2] w-[100%] bg-white/10 backdrop-blur">
         <div class="container relative w-[85%] m-auto flex justify-between items-center py-3 max-lg:w-[90%] max-md:w-[97%]">
@@ -110,7 +111,7 @@
         </div>
     </header>
     <!-- Main -->
-    <main>
+    <main class="relative">
         <!-- The Hero Section -->
         <section id="home" class="h-screen relative overflow-hidden max-md:h-[100%]">
             <div class="w-[85%] m-auto flex justify-between items-center flex-wrap h-full max-lg:w-[90%] max-md:w-[97%] max-md:flex-col max-md:pt-[5rem] max-md:gap-[3rem]">
@@ -128,9 +129,6 @@
                 <div id="intro-hero-image" class="w-[50%] max-md:w-[100%]">
                     <img src="assets/images/Group 138.png" alt="" class="w-[100%] h-auto hover:scale-[1.03] transition-all duration-500 ease-in-out">
                 </div>
-                <div class="size-[600px] rounded-[50%] bg-co-500 absolute -top-[50%] -left-[25%] z-[-1] blur-[20rem]"></div>
-                <div class="size-[600px] rounded-[50%] bg-co-500 absolute -bottom-[50%] right-[0%] z-[-1] blur-[20rem] "></div>
-                <div class="size-[600px] rounded-[50%] bg-[#FFD6D6] absolute -top-[80%] right-[20%] z-[-1] blur-[20rem]"></div>
             </div>
         </section>
         <!-- TeamsUse Section -->
@@ -154,7 +152,6 @@
                         <a href="#" class="shrink-0" aria-hidden="true"><img src="assets/images/Group 146.png" alt="" class="h-[38px] w-auto max-w-none"></a>
                     </div>
                 </div>
-                <div class="size-[600px] rounded-[50%] bg-co-500 absolute -bottom-[0%] -right-[5%] z-[-1] blur-[20rem]"></div>
             </div>
         </section>
         <!-- Support Section -->
@@ -192,9 +189,9 @@
                 <div class="w-[48%] flex flex-col gap-[2.3rem] py-[3rem] max-md:w-[100%]">
                     <div class="flex gap-[1.5rem]">
                         <div class="w-[55px] h-[55px] p-[11px] bg-white grid place-items-center">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M27.5 15H22.5L18.75 26.25L11.25 3.75L7.5 15H2.5" stroke="#54BD95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                            </svg>
                         </div>
                         <div>
                             <h3 class="font-bold text-xl text-co-950 mb-[1rem] max-lg:text-lg max-lg:mb-[0.5rem]">Publishing</h3>
@@ -258,8 +255,7 @@
                         <p class="font-normal text-base text-gray-400">We always provide useful informatin to make it easier for you every day</p>
                     </div>
                 </div>
-                <div class="size-[550px] rounded-[50%] bg-[#FFD6D6] absolute top-[45%] -left-[5%] z-[-1] blur-[20rem]"></div>
-             </div>
+            </div>
         </section>
         <!-- What Benifit Will Section -->
         <section id="benefits" class="relative overflow-hidden">
@@ -277,8 +273,6 @@
                 <div class="w-[50%] max-md:w-[100%] grid place-items-center">
                     <img src="assets/images/Group 1940.png" alt="" class="w-[100%] h-auto hover:scale-[1.03] transition-all duration-500 ease-in-out max-md:w-[80%]">
                 </div>
-                <div class="size-[550px] rounded-[50%] bg-[#FFD6D6] absolute -top-[0%] -left-[5%] z-[-1] blur-[20rem]"></div>
-                <div class="size-[600px] rounded-[50%] bg-co-500 absolute -bottom-[70%] -right-[0%] z-[-1] blur-[20rem]"></div>
             </div>
         </section>
         <!-- Choose Plan Cards Section -->
@@ -368,9 +362,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="size-[600px] rounded-[50%] bg-co-500 absolute -top-[42%] right-[0%] z-[-1] blur-[20rem]"></div>
-                <div class="size-[600px] rounded-[50%] bg-co-500 absolute bottom-[0%] -right-[20%] z-[-1] blur-[20rem]"></div>
-
             </div>
         </section>
     </main>
@@ -496,8 +487,14 @@
             </div>
         </div>
     </footer>
+    <div class="size-[600px] rounded-[50%] bg-co-500 absolute -top-[50%] -left-[25%] z-[-1] blur-[20rem]"></div>
+    <div class="size-[600px] rounded-[50%] bg-[#FFD6D6] absolute -top-[80%] right-[20%] z-[-1] blur-[20rem]"></div>
+    <div class="size-[600px] rounded-[50%] bg-co-500 absolute -bottom-[50%] -right-[5%] z-[-1] blur-[20rem]"></div>
+    <div class="size-[600px] rounded-[50%] bg-[#FFD6D6] absolute top-[110rem] -left-[5%] z-[-1] blur-[20rem]"></div>
+    <div class="size-[600px] rounded-[50%] bg-co-500 absolute top-[120rem] -right-[0%] z-[-1] blur-[20rem]"></div>
+    <div class="size-[600px] rounded-[50%] bg-co-500 absolute top-[210rem] -right-[0%] z-[-1] blur-[20rem]"></div>
     <!-- the login modal -->
-     <div id="login-modal" class="hidden fixed inset-0 z-50 bg-black/70 items-center justify-center p-4">
+    <div id="login-modal" class="hidden fixed inset-0 z-50 bg-black/70 items-center justify-center p-4">
         <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-6"> 
             <div class="flex items-center justify-between">
                 <h2 class="text-2xl font-bold text-co-950">Welcome Back</h2>
@@ -521,7 +518,7 @@
                 <button type="submit" class="w-full rounded-lg bg-co-500 py-3 font-medium text-white hover:-translate-y-[3px] transition-all duration-500 ease-in-out">Log In</button>
             </form>
         </div>
-     </div>
+    </div>
     <!-- the signup modal -->
     <div id="signup-modal" class="hidden fixed inset-0 z-50 bg-black/70 items-center justify-center p-4">
         <div class="w-full max-w-md max-h-[95vh] overflow-y-auto bg-white rounded-2xl shadow-xl p-6">
